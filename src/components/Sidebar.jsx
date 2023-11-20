@@ -10,6 +10,7 @@ export default function Sidebar() {
   const location = useLocation();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState("");
+  
 
   const handleLogout = () => {
     Swal.fire({

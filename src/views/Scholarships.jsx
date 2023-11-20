@@ -42,7 +42,7 @@ export default function Dashboard() {
       <div className="mt-8  p-8 pl-4 mr-4 h-[480px] overflow-y-scroll">
         <table className="border-t-[1px] border-black  w-[100%]">
           <thead>
-            <tr className="text-center ">
+            <tr className="text-center">
               <th className=" py-3 px-4 border-b-[1px] border-slate-600">NO</th>
               <th className=" py-3 px-4 border-b-[1px] border-slate-600">
                 NAME
@@ -52,6 +52,9 @@ export default function Dashboard() {
               </th>
               <th className=" py-3 px-4 border-b-[1px] border-slate-600">
                 UNIVERSITY
+              </th>
+              <th className=" py-3 px-4 border-b-[1px] border-slate-600">
+                COUNTRY
               </th>
               <th className=" py-3 px-4 border-b-[1px] border-slate-600">
                 DEGREES

@@ -23,7 +23,11 @@ export default function TableRowScholarships({ scholarship, idx }) {
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(deleteScholarship(scholarship.slug));
-        Swal.fire("Deleted!", "Your selected scholarship has been deleted.", "success");
+        Swal.fire(
+          "Deleted!",
+          "Your selected scholarship has been deleted.",
+          "success"
+        );
       }
     });
   };
@@ -52,17 +56,24 @@ export default function TableRowScholarships({ scholarship, idx }) {
           {scholarship.isOpen === true ? "Open" : "Closed"}
         </td>
         <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
-          {scholarship.university}
+          {scholarship.university.length > 1
+            ? scholarship.university.join(", ")
+            : scholarship.university}
         </td>
         <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
-          {scholarship.degrees.length > 1 ? scholarship.degrees.join(", ") : scholarship.degrees}
+          {scholarship.countries.length > 1
+            ? scholarship.countries.join(", ")
+            : scholarship.countries}
         </td>
         <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
-        {scholarship.isFullyFunded === true ? "Fully Funded" : "Partial"}
+          {scholarship.degrees.length > 1
+            ? scholarship.degrees.join(", ")
+            : scholarship.degrees}
         </td>
-        {/* <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
-          {scholarship.links}
-        </td> */}
+        <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
+          {scholarship.isFullyFunded === true ? "Fully Funded" : "Partial"}
+        </td>
+
         <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
           <div className="flex flex-row gap-4">
             <button
