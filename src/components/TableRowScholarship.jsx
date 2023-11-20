@@ -58,7 +58,7 @@ export default function TableRowScholarships({ scholarship, idx }) {
           {scholarship.degrees.length > 1 ? scholarship.degrees.join(", ") : scholarship.degrees}
         </td>
         <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
-        {scholarship.fundedType === true ? "Fully Funded" : "Partial"}
+        {scholarship.isFullyFunded === true ? "Fully Funded" : "Partial"}
         </td>
         {/* <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
           {scholarship.links}
