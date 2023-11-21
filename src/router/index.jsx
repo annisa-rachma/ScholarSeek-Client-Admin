@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Dashboard from "../views/Dasboard";
 import Scholarships from "../views/Scholarships"
 import RegisterAdmin from "../views/RegisterAdmin";
+import Mentoring from "../views/Mentoring";
 
 const router = createBrowserRouter([
   {
@@ -37,10 +38,10 @@ const router = createBrowserRouter([
         path: "/scholarships",
         element: <Scholarships />,
       },
-      // {
-      //   path: "/scholarships/:slug",
-      //   element: <ScholarshipDetail />,
-      // },
+      {
+        path: "/mentoring",
+        element: <Mentoring />,
+      },
       // {
       //   path: "/create-scholarships",
       //   element: <CreateScholarShip />,

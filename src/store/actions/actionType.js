@@ -9,6 +9,8 @@ export const ADD_SCHOLARSHIP_FETCH_SUCCESS = 'addScholarship/fetchSuccess'
 export const DELETE_SCHOLARSHIP_FETCH_SUCCESS = 'deleteScholarship/fetchSuccess'
 export const EDIT_SCHOLARSHIP_FETCH_SUCCESS = 'editScholarship/fetchSuccess'
 
+export const MENTORING_FETCH_SUCCESS = 'mentoring/fetchSuccess'
+export const MENTORING_BY_ID_FETCH_SUCCESS = 'mentoringById/fetchSuccess'
 
 export function loginFetchSuccess(payload) {
     return {
@@ -45,6 +47,20 @@ export function loginFetchSuccess(payload) {
   export function editScholarshipFetchSuccess(payload) {
     return {
       type: EDIT_SCHOLARSHIP_FETCH_SUCCESS,
+      payload: payload,
+    };
+  }
+
+
+  export function mentoringFetchSuccess(payload) {
+    return {
+      type: MENTORING_FETCH_SUCCESS,
+      payload: payload,
+    };
+  }
+  export function mentoringByIdFetchSuccess(payload) {
+    return {
+      type: MENTORING_BY_ID_FETCH_SUCCESS,
       payload: payload,
     };
   }
