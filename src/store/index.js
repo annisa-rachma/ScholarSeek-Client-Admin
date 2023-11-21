@@ -3,11 +3,13 @@ import { legacy_createStore as createStore, combineReducers, applyMiddleware } f
 import loginReducer from './reducers/loginReducer'
 import registerReducer from './reducers/registerReducer'
 import scholarshipReducer from './reducers/scholarshipReducer'
+import mentoringReducer from './reducers/mentoringReducer'
 
 const rootReducer = combineReducers({
     loginReducer : loginReducer,
     registerReducer : registerReducer,
-    scholarshipReducer : scholarshipReducer
+    scholarshipReducer : scholarshipReducer,
+    mentoringReducer : mentoringReducer
 })
 
 let store = createStore(rootReducer, applyMiddleware(thunk))
