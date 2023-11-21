@@ -36,8 +36,8 @@ export default function Sidebar() {
       case "/scholarships":
         setCurrentPage("scholarships");
         break;
-      case "/forum":
-        setCurrentPage("forum");
+      case "/threads":
+        setCurrentPage("threads");
         break;
       case "/mentoring":
         setCurrentPage("mentoring");
@@ -103,14 +103,14 @@ export default function Sidebar() {
                 : "text-black"
             }`}
           >
-            <Link to={`/forum`}>
+            <Link to={`/threads`}>
               <div className="w-[85%] h-16 border-b-[1px] mx-auto border-black grid content-center">
                 <div className="flex-row flex ml-6">
                   <div>
                     <MdOutlineDashboardCustomize size="25px" />
                   </div>
                   <div className="ml-4 grid place-content-center">
-                    Forum
+                    Thread
                   </div>
                 </div>
               </div>

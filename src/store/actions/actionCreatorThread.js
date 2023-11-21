@@ -1,10 +1,10 @@
 import { baseUrl } from "../../config/baseUrl";
-import { mentoringByIdFetchSuccess, mentoringFetchSuccess } from "./actionType";
+import { threadByIdFetchSuccess, threadsFetchSuccess } from "./actionType";
 
-  export function fetchMentoring() {
+  export function fetchThreads() {
     return async function (dispatch) {
       try {
-        const response = await fetch(baseUrl+"/mentoring",{
+        const response = await fetch(baseUrl+"/threads",{
           method: "GET",
           body: JSON.stringify(),
           headers: {
@@ -15,18 +15,18 @@ import { mentoringByIdFetchSuccess, mentoringFetchSuccess } from "./actionType";
         const resData = await response.json();
         if (!response.ok) throw resData;
         // console.log(resData.datas);
-        dispatch(mentoringFetchSuccess(resData.datas));
+        dispatch(threadsFetchSuccess(resData.datas));
       } catch (err) {
         throw err;
       }
     };
   }
 
-  export function fetchMentoringById(slug) {
+  export function fetchThreadById(slug) {
     // console.log(slug);
     return async function (dispatch) {
       try {
-        const response = await fetch(baseUrl + "/mentoring/" + slug,{
+        const response = await fetch(baseUrl + "/threads/" + slug,{
           method: "GET",
           headers: {
             access_token: localStorage.access_token,
@@ -35,7 +35,7 @@ import { mentoringByIdFetchSuccess, mentoringFetchSuccess } from "./actionType";
         });
         const resData = await response.json();
         if (!response.ok) throw resData;
-        dispatch(mentoringByIdFetchSuccess(resData));
+        dispatch(threadByIdFetchSuccess(resData));
       } catch (err) {
         throw err;
       }
