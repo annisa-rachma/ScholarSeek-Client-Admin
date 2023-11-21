@@ -12,6 +12,9 @@ export const EDIT_SCHOLARSHIP_FETCH_SUCCESS = 'editScholarship/fetchSuccess'
 export const MENTORING_FETCH_SUCCESS = 'mentoring/fetchSuccess'
 export const MENTORING_BY_ID_FETCH_SUCCESS = 'mentoringById/fetchSuccess'
 
+export const THREADS_FETCH_SUCCESS = 'threads/fetchSuccess'
+export const THREAD_BY_ID_FETCH_SUCCESS = 'threadById/fetchSuccess'
+
 export function loginFetchSuccess(payload) {
     return {
       type: LOGIN_FETCH_SUCCESS,
@@ -61,6 +64,19 @@ export function loginFetchSuccess(payload) {
   export function mentoringByIdFetchSuccess(payload) {
     return {
       type: MENTORING_BY_ID_FETCH_SUCCESS,
+      payload: payload,
+    };
+  }
+
+  export function threadsFetchSuccess(payload) {
+    return {
+      type: THREADS_FETCH_SUCCESS,
+      payload: payload,
+    };
+  }
+  export function threadByIdFetchSuccess(payload) {
+    return {
+      type: THREAD_BY_ID_FETCH_SUCCESS,
       payload: payload,
     };
   }

@@ -1,10 +1,11 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 import LoginPage from "../views/LoginPage";
 import Layout from "../components/Layout";
-import Dashboard from "../views/Dasboard";
+import Dashboard from "../views/Dashboard";
 import Scholarships from "../views/Scholarships"
 import RegisterAdmin from "../views/RegisterAdmin";
 import Mentoring from "../views/Mentoring";
+import Threads from "../views/Thread";
 
 const router = createBrowserRouter([
   {
@@ -42,14 +43,10 @@ const router = createBrowserRouter([
         path: "/mentoring",
         element: <Mentoring />,
       },
-      // {
-      //   path: "/create-scholarships",
-      //   element: <CreateScholarShip />,
-      // },
-      // {
-      //   path: "/scholarships/:slug",
-      //   element: <EditScholarship />,
-      // },
+      {
+        path: "/threads",
+        element: <Threads />,
+      },
       {
         path: "/register",
         element: <RegisterAdmin />,
