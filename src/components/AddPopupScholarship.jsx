@@ -57,7 +57,7 @@ export default function AddPopupScholarship({ visible, onClose }) {
     }
   };
 
-  console.log(input);
+//   console.log(input, 'ini gue');
 
   const handleSubmit = async (event) => {
     try {

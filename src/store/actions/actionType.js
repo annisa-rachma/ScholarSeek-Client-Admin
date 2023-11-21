@@ -4,7 +4,7 @@ export const REGISTER_FETCH_SUCCESS = 'register/fetchSuccess'
 export const REGISTER_FETCH_FAIL = 'register/fetchFail'
 
 export const SCHOLARSHIP_FETCH_SUCCESS = 'scholarship/fetchSuccess'
-export const SCHOLARSHIP_BY_ID_FETCH_SUCCESS = 'scholarship/fetchSuccess'
+export const SCHOLARSHIP_BY_ID_FETCH_SUCCESS = 'scholarshipById/fetchSuccess'
 export const ADD_SCHOLARSHIP_FETCH_SUCCESS = 'addScholarship/fetchSuccess'
 export const DELETE_SCHOLARSHIP_FETCH_SUCCESS = 'deleteScholarship/fetchSuccess'
 export const EDIT_SCHOLARSHIP_FETCH_SUCCESS = 'editScholarship/fetchSuccess'

@@ -35,7 +35,7 @@ import { scholarshipsByIdFetchSuccess, scholarshipsFetchSuccess } from "./action
           },
         });
         const resData = await response.json();
-        console.log(resData);
+        console.log(resData,"<<<><><><");
         if (!response.ok) throw resData;
         dispatch(scholarshipsByIdFetchSuccess(resData));
       } catch (err) {
@@ -67,8 +67,8 @@ import { scholarshipsByIdFetchSuccess, scholarshipsFetchSuccess } from "./action
     };
   }
 
-  export function editScholarship(slug, payload) {
-    // console.log(slug, payload);
+  export function editScholarship(payload, slug) {
+    console.log(slug, payload);
     return async function (dispatch) {
       try {
         const response = await fetch(baseUrl + "/scholarships/" + slug,{

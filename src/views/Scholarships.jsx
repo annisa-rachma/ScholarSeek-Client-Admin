@@ -11,6 +11,7 @@ export default function Dashboard() {
     return state.scholarshipReducer.scholarships;
   });
   const dispatch = useDispatch();
+  console.log('HALAMAN DASBOARD KE RENDERRR')
 
   const fetchData = async () => {
     try {

@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
 // import ImagesPopup from "./ImagesPopup";
 import { useState } from "react";
-// import EditScholarship from "./EditScholarshipPopup";
 import Swal from "sweetalert2";
 import { deleteScholarship } from "../store/actions/actionCreatorScholarships";
+import EditPopupScholarship from "./EditPopupScholarship";
+import MyEditPopupScholarship from "./MyEditPopupScholarship";
 
 export default function TableRowScholarships({ scholarship, idx }) {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ export default function TableRowScholarships({ scholarship, idx }) {
     setShowImages(true);
     setShowClicked(true);
   };
-
+  console.log(showEdit, 'INI STATE SHOW EDIT    ')
   const handleShowEdit = () => {
     setShowEdit(true);
     setEditClicked(true);
@@ -56,17 +57,18 @@ export default function TableRowScholarships({ scholarship, idx }) {
           {scholarship.isOpen === true ? "Open" : "Closed"}
         </td>
         <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
-          {scholarship.university.length > 1
+          {scholarship.university?.length > 1
             ? scholarship.university.join(", ")
-            : scholarship.university}
+            : scholarship.university }
+            
         </td>
         <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
-          {scholarship.countries.length > 1
+          {scholarship.countries?.length > 1
             ? scholarship.countries.join(", ")
             : scholarship.countries}
         </td>
         <td className=" py-3 px-4 border-b-[1px]  border-slate-300 ">
-          {scholarship.degrees.length > 1
+          {scholarship.degrees?.length > 1
             ? scholarship.degrees.join(", ")
             : scholarship.degrees}
         </td>
@@ -104,13 +106,15 @@ export default function TableRowScholarships({ scholarship, idx }) {
           id={scholarship.id}
         />
       )} */}
-      {/* {editClicked && (
-        <Editscholarship
+      {/* {console.log(scholarship,"<<<<<<")} */}
+      {showEdit && (
+        // <MyEditPopupScholarship slug={scholarship.slug}/>
+        <EditPopupScholarship
           onClose={handleOnCloseEdit}
           visible={showEdit}
-          id={scholarship.id}
+          slug={scholarship.slug}
         />
-      )} */}
+      )}
     </>
   );
 }
