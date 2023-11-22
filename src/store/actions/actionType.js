@@ -15,6 +15,9 @@ export const MENTORING_BY_ID_FETCH_SUCCESS = 'mentoringById/fetchSuccess'
 export const THREADS_FETCH_SUCCESS = 'threads/fetchSuccess'
 export const THREAD_BY_ID_FETCH_SUCCESS = 'threadById/fetchSuccess'
 
+export const USERS_FETCH_SUCCESS = 'users/fetchSuccess'
+export const USERS_PATCH_FETCH_SUCCESS = 'patchUser/fetchSuccess'
+
 export function loginFetchSuccess(payload) {
     return {
       type: LOGIN_FETCH_SUCCESS,
@@ -77,6 +80,19 @@ export function loginFetchSuccess(payload) {
   export function threadByIdFetchSuccess(payload) {
     return {
       type: THREAD_BY_ID_FETCH_SUCCESS,
+      payload: payload,
+    };
+  }
+
+  export function usersFetchSuccess(payload) {
+    return {
+      type: USERS_FETCH_SUCCESS,
+      payload: payload,
+    };
+  }
+  export function patchUserFetchSuccess(payload) {
+    return {
+      type: USERS_PATCH_FETCH_SUCCESS,
       payload: payload,
     };
   }

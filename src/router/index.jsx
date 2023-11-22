@@ -6,6 +6,7 @@ import Scholarships from "../views/Scholarships"
 import RegisterAdmin from "../views/RegisterAdmin";
 import Mentoring from "../views/Mentoring";
 import Threads from "../views/Thread";
+import Users from "../views/Users";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/threads",
         element: <Threads />,
+      },
+      {
+        path: "/users",
+        element: <Users />,
       },
       {
         path: "/register",

@@ -42,6 +42,9 @@ export default function Sidebar() {
       case "/mentoring":
         setCurrentPage("mentoring");
         break;
+      case "/users":
+        setCurrentPage("users");
+        break;
       case "/register":
         setCurrentPage("register");
         break;
@@ -78,7 +81,7 @@ export default function Sidebar() {
 
           <div
             className={`w-[100%] h-16 m-auto font-medium -mt-[1px]  hover:bg-black hover:text-white ${
-              currentPage === "categories"
+              currentPage === "scholarships"
                 ? "bg-black text-white"
                 : "text-black"
             }`}
@@ -98,7 +101,7 @@ export default function Sidebar() {
           </div>
           <div
             className={`w-[100%] h-16 m-auto font-medium -mt-[1px]  hover:bg-black hover:text-white ${
-              currentPage === "categories"
+              currentPage === "threads"
                 ? "bg-black text-white"
                 : "text-black"
             }`}
@@ -118,7 +121,7 @@ export default function Sidebar() {
           </div>
           <div
             className={`w-[100%] h-16 m-auto font-medium -mt-[1px]  hover:bg-black hover:text-white ${
-              currentPage === "categories"
+              currentPage === "mentoring"
                 ? "bg-black text-white"
                 : "text-black"
             }`}
@@ -131,6 +134,27 @@ export default function Sidebar() {
                   </div>
                   <div className="ml-4 grid place-content-center">
                     Mentoring
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div
+            className={`w-[100%] h-16 m-auto font-medium -mt-[1px]  hover:bg-black hover:text-white ${
+              currentPage === "users"
+                ? "bg-black text-white"
+                : "text-black"
+            }`}
+          >
+            <Link to={`/users`}>
+              <div className="w-[85%] h-16 border-b-[1px] mx-auto border-black grid content-center">
+                <div className="flex-row flex ml-6">
+                  <div>
+                    <MdOutlineDashboardCustomize size="25px" />
+                  </div>
+                  <div className="ml-4 grid place-content-center">
+                    Users
                   </div>
                 </div>
               </div>

@@ -25,7 +25,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
     registrationDeadline: "",
     description: "",
     university: [],
-    Major: [],
+    major: [],
     benefit: [],
     ageRequirement: "",
     gpaRequirement: "",
@@ -49,7 +49,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
   };
   useEffect(() => {
     if (scholarship) {
-      console.log(scholarship);
+      console.log(scholarship, "line 52");
       setInput(scholarship);
     }
   }, [scholarship]);
@@ -58,7 +58,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
   }, [slug]);
 
   const typeBooleanInputs = ["isFullyFunded"];
-  
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -77,23 +77,17 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
       // Handle array input, split value by comma and trim each value
       const arrayValue = value.split(",").map((item) => item.trim());
 
-      // setInput(prev => {
-      //   return {
-      //     ...prev, [name]: [...prev[name], ...arrayValue]
-      //   }
-      // })
-
       setInput({
         ...input,
         [name]: arrayValue,
       });
-    } else if (typeBooleanInputs.includes(event.target.name)) {
-      setInput((prev) => {
-        return {
-          ...prev,
-          [event.target.name]: event.target.checked,
-        };
-      });
+    // } else if (typeBooleanInputs.includes(event.target.name)) {
+    //   setInput((prev) => {
+    //     return {
+    //       ...prev,
+    //       [event.target.name]: event.target.checked,
+    //     };
+    //   });
     } else {
       // setInput(prev => {
       //   return {
@@ -107,7 +101,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
     }
   };
 
-  console.log(input,"<><>><<><><><");
+  console.log(input, "<><>><<><><><");
 
   const handleSubmit = async (event) => {
     try {
@@ -196,7 +190,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                       className="w-[100%] h-10 pl-4 mt-1 bg-white border border-black text-black text-md"
                     />
                   </div>
-                  <div className="flex gap-2 items-center">
+                  {/* <div className="flex gap-2 items-center">
                     <input
                       className="shadow-md"
                       onChange={handleChange}
@@ -206,30 +200,30 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                       value={input.isFullyFunded}
                     />
                     <label htmlFor={input.isFullyFunded}>Fully Funded</label>
+                  </div> */}
+                  <div className="flex flex-col mt-2">
+                    <label className="text-black text-md ">isFullyFunded</label>
+                    <select
+                      value={input.isFullyFunded}
+                      name="isFullyFunded"
+                      // id=""
+                      onChange={handleChange}
+                      className="w-[100%] h-10 pl-4 mt-1 bg-white border border-black text-black text-md"
+                    >
+                      <option value="" disabled>
+                        Select isFullyFunded
+                      </option>
+                      <option value="Fully Funded">Fully Funded</option>
+                      <option value="Partial">Partial</option>
+                    </select>
                   </div>
-                  {/* <div className="flex flex-col mt-2">
-              <label className="text-black text-md ">isFullyFunded</label>
-              <select
-                value={input.isFullyFunded}
-                name="isFullyFunded"
-                id=""
-                onChange={handleChange}
-                className="w-[100%] h-10 pl-4 mt-1 bg-white border border-black text-black text-md"
-              >
-                <option value="" disabled>
-                  Select isFullyFunded
-                </option>
-                <option value="Fully Funded">Fully Funded</option>
-                <option value="Partial">Partial</option>
-              </select>
-            </div> */}
                   <div className="flex flex-col mt-2">
                     <label className="text-black text-md ">
                       Degrees (Separate with commas)
                     </label>
                     <input
                       type="text"
-                      value={input.degrees.join(', ')}
+                      value={input.degrees.join(", ")}
                       name="degrees"
                       onChange={handleChange}
                       placeholder="Input degrees..."
@@ -242,7 +236,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     </label>
                     <input
                       type="text"
-                      value={input.countries.join(', ')}
+                      value={input.countries.join(", ")}
                       name="countries"
                       onChange={handleChange}
                       placeholder="Input country..."
@@ -277,7 +271,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     <label className="text-black text-md ">Description</label>
                     <input
                       type="textarea"
-                      value={input.Detail?.About?.map((el) => el.Description)}
+                      value={input.description}
                       name="description"
                       onChange={handleChange}
                       placeholder="Input description..."
@@ -290,7 +284,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     </label>
                     <input
                       type="text"
-                      value={input.Detail?.About?.map((el) => el.University)}
+                      value={input.university.join(", ")}
                       name="university"
                       onChange={handleChange}
                       placeholder="Input university..."
@@ -303,7 +297,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     </label>
                     <input
                       type="text"
-                      value={input.Detail?.About?.map((el) => el.Major)}
+                      value={input.major.join(", ")}
                       name="major"
                       onChange={handleChange}
                       placeholder="Input major..."
@@ -318,7 +312,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     </label>
                     <input
                       type="text"
-                      value={input.Detail?.About?.map((el) => el.Benefit)}
+                      value={input.benefit.join(", ")}
                       name="benefit"
                       onChange={handleChange}
                       placeholder="Input benefit..."
@@ -359,7 +353,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     </label>
                     <input
                       type="text"
-                      value={input.englishTest}
+                      value={input.englishTest.join(", ")}
                       name="englishTest"
                       onChange={handleChange}
                       placeholder="Input englishTest..."
@@ -372,7 +366,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     </label>
                     <input
                       type="text"
-                      value={input.otherLangTest}
+                      value={input.otherLangTest.join(", ")}
                       name="otherLangTest"
                       onChange={handleChange}
                       placeholder="Input otherLanguageTest..."
@@ -386,7 +380,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     </label>
                     <input
                       type="text"
-                      value={input.standarizedTest}
+                      value={input.standarizedTest.join(", ")}
                       name="standarizedTest"
                       onChange={handleChange}
                       placeholder="Input standarizedTest..."
@@ -399,7 +393,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     </label>
                     <input
                       type="text"
-                      value={input.documents}
+                      value={input.documents.join(", ")}
                       name="documents"
                       onChange={handleChange}
                       placeholder="Input documents..."
@@ -412,7 +406,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
                     </label>
                     <input
                       type="text"
-                      value={input.others}
+                      value={input.others.join(", ")}
                       name="others"
                       onChange={handleChange}
                       placeholder="Input others..."
