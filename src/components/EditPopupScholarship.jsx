@@ -11,7 +11,14 @@ import {
 export default function EditPopupScholarship({ visible, onClose, slug }) {
   const dispatch = useDispatch();
   const scholarship = useSelector(
-    (state) => state.scholarshipReducer.scholarshipsById
+    (state) => {
+      state.scholarshipReducer.scholarshipsById.isFullyFunded = String(state.scholarshipReducer.scholarshipsById.isFullyFunded)
+      if (state.scholarshipReducer.scholarshipsById.isFullyFunded == "true") {
+        state.scholarshipReducer.scholarshipsById.isFullyFunded = "Fully Funded"
+      }else if (state.scholarshipReducer.scholarshipsById.isFullyFunded == "false") {
+        state.scholarshipReducer.scholarshipsById.isFullyFunded = "Partial"
+      }
+      return state.scholarshipReducer.scholarshipsById}
   );
 
   const [loading, setLoading] = useState(false);
@@ -81,6 +88,7 @@ export default function EditPopupScholarship({ visible, onClose, slug }) {
         ...input,
         [name]: arrayValue,
       });
+      
     // } else if (typeBooleanInputs.includes(event.target.name)) {
     //   setInput((prev) => {
     //     return {

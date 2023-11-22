@@ -1,7 +1,11 @@
-// import Logo from "/logo.svg";
-import { MdOutlineDashboardCustomize, MdOutlineHome } from "react-icons/md";
+import Logo from "../assets/Logo.png"
+import { MdOutlineHome } from "react-icons/md";
 import { HiOutlineUserAdd } from "react-icons/hi";
 import { RiLogoutBoxRLine } from "react-icons/ri";
+import { SiSemanticscholar } from "react-icons/si";
+import { BsThreads } from "react-icons/bs";
+import { TbSocial } from "react-icons/tb";
+import { PiUsersThreeBold } from "react-icons/pi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
@@ -56,7 +60,7 @@ export default function Sidebar() {
     <>
       <div className="left-0 m-auto top-0 w-full h-[100vh] flex flex-col bg-gray-200 border-r-[1px] border-black">
         <div className="mt-12">
-          {/* <img src={Logo} alt="logo" className="w-36 mx-auto " /> */}
+          <img src={Logo} alt="logo" className="w-45 mx-auto " />
         </div>
 
         <div className="mt-8 flex flex-col justify-center ">
@@ -90,7 +94,7 @@ export default function Sidebar() {
               <div className="w-[85%] h-16 border-b-[1px] mx-auto border-black grid content-center">
                 <div className="flex-row flex ml-6">
                   <div>
-                    <MdOutlineDashboardCustomize size="25px" />
+                    <SiSemanticscholar size="25px" />
                   </div>
                   <div className="ml-4 grid place-content-center">
                     Scholarship
@@ -110,7 +114,7 @@ export default function Sidebar() {
               <div className="w-[85%] h-16 border-b-[1px] mx-auto border-black grid content-center">
                 <div className="flex-row flex ml-6">
                   <div>
-                    <MdOutlineDashboardCustomize size="25px" />
+                    <BsThreads size="25px" />
                   </div>
                   <div className="ml-4 grid place-content-center">
                     Thread
@@ -130,7 +134,7 @@ export default function Sidebar() {
               <div className="w-[85%] h-16 border-b-[1px] mx-auto border-black grid content-center">
                 <div className="flex-row flex ml-6">
                   <div>
-                    <MdOutlineDashboardCustomize size="25px" />
+                    <TbSocial size="25px" />
                   </div>
                   <div className="ml-4 grid place-content-center">
                     Mentoring
@@ -151,7 +155,7 @@ export default function Sidebar() {
               <div className="w-[85%] h-16 border-b-[1px] mx-auto border-black grid content-center">
                 <div className="flex-row flex ml-6">
                   <div>
-                    <MdOutlineDashboardCustomize size="25px" />
+                    <PiUsersThreeBold size="25px" />
                   </div>
                   <div className="ml-4 grid place-content-center">
                     Users
